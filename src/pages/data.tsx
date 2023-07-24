@@ -1,7 +1,8 @@
 import { useStateContext } from '@/context';
-import Logo from '@/assets/logo.png';
+import Logo from '@/assets/images/logo.png';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Sidebar from '@/components/Sidebar';
 
 const Data = () => {
   const { setTabledata, tabledata, errordata } = useStateContext();
@@ -26,13 +27,7 @@ const Data = () => {
   return (
     <div className="flex w-[100vw] h-[100vh] overflow-hidden">
       <div className="w-[18%] bg-[#10004f]">
-        <div className="text-white flex items-end justify-center pt-20">
-          <div className="w-[50px] h-[50px]">
-            <Image src={Logo} alt="" layout="responsive" />
-          </div>
-          <h1 className="font-bold text-[24px] ml-2">cQube Admin</h1>
-        </div>
-        <div className="h-[1px] w-[100%] bg-white mt-10"></div>
+        <Sidebar/>
       </div>
       <div className="relative overflow-auto shadow-md sm:rounded-lg container mx-auto my-10">
         <table className="w-full text-sm text-left text-gray-500 lg:mx-10">
@@ -60,13 +55,13 @@ const Data = () => {
                       <>
                         {columnData?.error ? (
                           <td
-                            className="px-6 py-4 text-center bg-red-200"
+                            className="px-6 py-4 text-center bg-red-200 font-regular"
                             key={column}>
                             {columnData?.value}
                           </td>
                         ) : (
                           <td
-                            className="px-6 py-4 text-center bg-green-200"
+                            className="px-6 py-4 text-center bg-green-200 font-regular"
                             key={column}>
                             {columnData}
                           </td>

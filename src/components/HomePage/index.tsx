@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
-import styles from './index.module.css';
-import Logo from '@/assets/logo.png';
-import fileUpload from '@/assets/fileUpload.svg';
+import styles from './index.module.css'
+import fileUpload from '@/assets/images/fileUpload.svg';
 import Image from 'next/image';
 import { useStateContext } from '@/context';
 import { useRouter } from 'next/router';
 import papa from 'papaparse';
+import Sidebar from '../Sidebar';
 
 const HomePage = () => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -108,15 +108,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.leftSide}>
-        <div className={styles.brandName}>
-          <div className={styles.logo}>
-            <Image src={Logo} alt="" layout="responsive" />
-          </div>
-          <h1>cQube Admin</h1>
-        </div>
-        <div className={styles.linebreak}></div>
-      </div>
+      <Sidebar/>
       <div className={styles.rightSide}>
         <div className={styles.navbar}></div>
         <div className={styles.rightBody}>
@@ -133,7 +125,7 @@ const HomePage = () => {
               />
               <div className={styles.buttonContainer}>
                 {secondUploadLabel.length > 0 && (
-                  <h1>
+                  <h1 className='font-bold'>
                     Please upload {secondUploadLabel.split(' ')[0]} Grammar
                     file.
                   </h1>
@@ -146,7 +138,7 @@ const HomePage = () => {
           ) : (
             <>
               <div className={styles.buttonContainer}>
-                <h1>Which file is it?</h1>
+                <h1 className='font-bold'>Which file is it?</h1>
                 <button
                   className={styles.btn}
                   onClick={() => handleButtonClick('Event Grammar')}>
