@@ -5,38 +5,6 @@
   overflow: hidden;
 }
 
-.leftSide {
-  flex: 0.18;
-  background-color: var(--primary);
-  color: white;
-  font-weight: bold;
-}
-
-.brandName {
-  display: flex;
-  align-items: flex-end;
-  margin-left: 15%;
-  margin-bottom: 10%;
-  margin-top: 30%;
-  margin-right: 10%;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-  margin-right: 1rem;
-}
-
-.leftSide h1 {
-  font-size: 24px;
-}
-
-.linebreak {
-  height: 1px;
-  width: 100%;
-  background-color: white;
-}
-
 .rightSide {
   flex: 0.82;
 }
@@ -62,6 +30,7 @@
   background-color: var(--primary);
   width: 100%;
   height: fit-content;
+  font-family: Mulish-regular !important;
   margin: 8%;
   color: white;
   padding: 10px 50px;
