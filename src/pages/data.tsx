@@ -1,6 +1,4 @@
 import { useStateContext } from '@/context';
-import Logo from '@/assets/images/logo.png';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Sidebar from '@/components/Sidebar';
 
@@ -13,7 +11,7 @@ const Data = () => {
     
       errordata && errordata?.length > 0 &&
       errordata?.map((data: any) => {   
-        const value = modifiedData[data?.row][data?.col];
+        const value = modifiedData?.[data?.row][data?.col];
         console.log(value);
         modifiedData[data?.row][data?.col] = {
           error: data.error,
@@ -21,7 +19,7 @@ const Data = () => {
         };        
       });
     
-    setTabledata(modifiedData);    
+    setTabledata(modifiedData);     
   }, [errordata, setTabledata, tabledata]);
 
   return (
@@ -29,7 +27,7 @@ const Data = () => {
       <div className="w-[18%] bg-[#10004f]">
         <Sidebar/>
       </div>
-      <div className="relative overflow-auto shadow-md sm:rounded-lg container mx-auto my-10">
+      <div className="relative overflow-auto shadow-md sm:rounded-lg container mx-auto my-10 w-[82%]">
         <table className="w-full text-sm text-left text-gray-500 lg:mx-10">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             {tabledata?.map(
