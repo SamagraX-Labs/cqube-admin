@@ -47,8 +47,8 @@ const Data = () => {
                 index == 0 && (
                   <tr className="bg-gray-100 border-b" key={index}>
                     {data?.map((row: any, ind: any) => (
-                      <th className={`px-6 py-4 text-center ${row?.error ? 'bg-red-200' : 'bg-green-200'}`} key={ind}>
-                        {row?.error ? row?.error : row}
+                      <th className={`px-6 py-4 text-center ${row?.error ? 'bg-red-200 cursor-pointer' : 'bg-green-200'}`} key={ind} title={row?.error ? row?.error: ''}>
+                        {row?.error ? row?.value : row}
                       </th>
                     ))}
                   </tr>
@@ -64,10 +64,10 @@ const Data = () => {
                       <>
                         <td
                           className={`px-6 py-4 text-center ${
-                            columnData?.error ? 'bg-red-200' : 'bg-green-200'
+                            columnData?.error ? 'bg-red-200 cursor-pointer' : 'bg-green-200'
                           } font-regular`}
-                          key={column}>
-                          {columnData?.error ? columnData?.error : columnData}
+                          key={column} title={columnData?.error ? columnData?.error: ''}>
+                          {columnData?.error ? columnData?.value : columnData}
                         </td>
                       </>
                     ))}
